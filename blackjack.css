@@ -1,0 +1,17 @@
+/*// **************** BLACKJACK ******************* //*/
+
+body {
+  margin: 0 auto;
+  background-image: url("/Users/Sean/desktop/Blackjack_Project1/Images/shutterstock_295741748.jpg");
+  height: 100vh;
+  width: 50vw;
+  background-size: cover;
+  text-align: center;
+}
+#buttons {
+  margin-top: 50px;
+  background: tan;
+  color: white;
+  border: 3px solid white;
+  border-radius: 30px;
+}
