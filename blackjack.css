@@ -4,14 +4,107 @@ body {
   margin: 0 auto;
   background-image: url("/Users/Sean/desktop/Blackjack_Project1/Images/shutterstock_295741748.jpg");
   height: 100vh;
-  width: 50vw;
+  width: 100%;
   background-size: cover;
   text-align: center;
 }
 #buttons {
-  margin-top: 50px;
-  background: tan;
+  margin-top: 5px;
+  background: rgba(140, 49, 49, 0.31);
   color: white;
-  border: 3px solid white;
+  border: 5px solid rgba(20,83,20,0.31);
   border-radius: 30px;
+  padding: 10px;
+  height: 70px;
 }
+#bank {
+  font-family: 'Baloo', cursive;
+  font-size: 20px;
+}
+#hitMeButton {
+  width: 100px;
+  height: 35px;
+  border: 3px solid black;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: 'Baloo', cursive;
+  box-shadow: 1px 2px 1px 2px rgb(224,204,177);
+}
+#hitMeButton:hover {
+color: black;
+background-color: white;
+cursor: pointer;
+}
+#stayButton {
+  width: 100px;
+  height: 35px;
+  border: 3px solid black;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: 'Baloo', cursive;
+  box-shadow: 1px 2px 1px 2px rgb(224,204,177);
+}
+#stayButton:hover {
+color: black;
+background-color: white;
+cursor: pointer;
+}
+#placeBet {
+  width: 150px;
+  height: 35px;
+  border: 3px solid black;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: 'Baloo', cursive;
+  box-shadow: 1px 2px 1px 2px rgb(224,204,177);
+}
+#placeBet:hover {
+color: black;
+background-color: white;
+cursor: pointer;
+}
+#betAmount {
+  width: 50px;
+  height: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: 'Baloo', cursive;
+  box-shadow: 1px 2px 1px 2px rgb(224,204,177);
+}
+#betAmount:hover {
+color: black;
+background-color: white;
+cursor: pointer;
+}
+p {
+  text-align: center;
+  display: inline;
+  width: 100px;
+  height: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 20px;
+  font-family: 'Baloo', cursive;
+  box-shadow: 1px 2px 1px 2px rgb(224,204,177);
+}
+p:hover {
+color: black;
+background-color: white;
+transition-duration: 4s;
+cursor: pointer;
+}
+  .author {
+    color: rgba(200,200,0,0.7);
+    font-family: 'Baloo', cursive;
+    }
