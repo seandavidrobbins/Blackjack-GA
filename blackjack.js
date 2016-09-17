@@ -4,20 +4,9 @@ window.onload = function(){
 
   console.log("Deal em Up!");
 
-  // ************ Place Bet ************** //
-  //When user clicks placeBet deduct input value from bank value
-  //Triggers first hand to dealer and player
 
-  var placeBet = function() {
-      var betAmount = document.getElementById("betAmount").value;
-      console.log(betAmount);
-      var bank = document.getElementById("bank").innerText;
-      document.getElementById('bank').innerText = bank - betAmount;
-      playAsUser();
-  };
   // ********* Card Constructor Create Deck *********** //
   var gameDeck;
-  console.log(gameDeck);
   var Card = function (suit, number) {
       var cardSuit = suit;
       var cardNumber = number;
@@ -145,19 +134,20 @@ window.onload = function(){
   function playAsUser() {
       var playerHand = new Hand();
       var continueLoop = true;
-      while ( continueLoop && !playerHand.busted() )
+      var play;
+      while (continueLoop && !playerHand.busted() )
       {
-          continueLoop = console.log(
+          play = confirm(
               "You have: " + playerHand.printHand() +
               "\nScore: " + playerHand.score() +
               "\n\nWould you like another card?");
-              var userChoice = prompt("Would you like another card?")
+              var userChoice = hitMeButton == "yes";
               if (userChoice == "yes") {
                 playerHand.hitMe();
-              } else {
-                console.log("stay");
               }
-
+              if (!play) {
+                continueLoop = false;
+              }
 
       }
       return playerHand;
@@ -207,15 +197,37 @@ window.onload = function(){
   // playGame();
 
 
+  // ************ Place Bet ************** //
+  //When user clicks placeBet deduct input value from bank value
+  //Triggers first hand to dealer and player
+
+  var placeBet = function(){
+      var betAmount = document.getElementById("betAmount").value;
+      var bank = document.getElementById("bank").innerText;
+      document.getElementById('bank').innerText = bank - betAmount;
+      console.log("hello from placeBet");
+  };
+
   // ************** BLACKJACK LISTENERS/HANDLERS *************** //
   // var hitMeButton = document.getElementById("hitMeButton");
   // hitMeButton.addEventListener("click", playGame);
   // when user clicks place bet take the input value
   var placeBetButton = document.getElementById('placeBet');
   placeBetButton.addEventListener("click", function(){
-    console.log("inside placeBetButton");
-   placeBet;
-   playGame();
+   placeBet();
+  playGame();
   });
+
+  var hitMeButton = document.getElementById('hitMeButton');
+  hitMeButton.addEventListener("click", function(){
+    playAsUser();
+});
+
+  var stayButton = document.getElementById('stayButton')
+  stayButton.addEventListener("click", function(){
+
+
+  });
+
 
 };
