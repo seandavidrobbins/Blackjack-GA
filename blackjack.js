@@ -3,7 +3,10 @@
 window.onload = function(){
 
 
-    // **** Create Cards ***** //
+console.log("Deal 'em up!!!");
+
+
+  // **** Create Cards ***** //
   var Card = function (suit, number){
         // The number of the card in the deck. (1-52) */
       this.getNumber = function (){
@@ -50,19 +53,19 @@ window.onload = function(){
           }
           return value;
       };
-      // The full name of the card. Suit and
+      // The full name of the card (suit, face, number etc.)
       this.getName = function (){
           var cardName = '';
           switch (number){
-              case 1: cardName = "A";
+            case 11: cardName = "J";
                   break;
-              case 13: cardName = "K";
+            case 13: cardName = "K";
                   break;
-              case 12: cardName = "Q";
+            case 12: cardName = "Q";
                   break;
-              case 11: cardName = "J";
+            case 1: cardName = "A";
                   break;
-              default: cardName = number;
+            default: cardName = number;
                   break;
           }
           return cardName+this.getSymbol();
@@ -133,7 +136,7 @@ window.onload = function(){
           /* Check to see if Aces should be 1 or 11 */
           while (score > 21 && aces > 0){
               score -= 10;
-              aces -=1;
+              aces -= 1;
           }
           return score;
       };
@@ -142,7 +145,7 @@ window.onload = function(){
           var handArray = [],
               i;
 
-          for (i=0;i<cards.length;i++){
+          for (i = 0; i < cards.length; i++){
               handArray.push(cards[i].getName());
           }
           return handArray.join();
@@ -165,6 +168,12 @@ window.onload = function(){
       };
   };
 
+  var placeBet = function() {
+      var betAmount = document.getElementById("betAmount").value;
+      console.log(betAmount);
+      var bank = document.getElementById("bank").innerText;
+      document.getElementById('bank').innerText = bank - betAmount;
+  };
   /** GAMEPLAY */
   (function (){
       /* Set up our Game's Deck */
@@ -197,7 +206,7 @@ window.onload = function(){
           return outcome+"<br />Dealer: "+dealerHand.score()+"<br />You: "+userScore;
       };
 
-      /** Dealer Conditions */
+        /** Dealer Conditions */
       var dealerHand = function (){
           var hand = new Hand(deck);
 
@@ -246,15 +255,13 @@ window.onload = function(){
           document.querySelector("#wins").innertext(wins);
           document.querySelector("#losses").innertext(losses);
       };
-
-      /* Deal Button */
+ // ******* Event Listeners ********* //
       dealButton.addEventListener('click', function (){
           playerHand = new Hand(deck);
           updateUI();
           showControls();
       });
 
-      /* Hit Button */
       hitMeButton.addEventListener('click', function (){
           playerHand.hitMeButton();
           if (playerHand.getHand().length >= 7 || playerHand.score() > 21){
@@ -264,7 +271,6 @@ window.onload = function(){
           }
       });
 
-      /* Stand Button */
       stayButton.addEventListener('click', function (){
           playerHand.html(declareWinner(playerHand, dealerHand()));
           showDeal();
