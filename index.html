@@ -7,17 +7,21 @@
      <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
      <script type="text/javascript" src="blackjack.js"></script>
      <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+
     <title>Blackjack</title>
   </head>
     <body>
-     <div id="buttons">
-       <button id="hitMeButton">Hit Me!</button>
-       <button id="stayButton">Stay!</button>
-       <button id="placeBet">Place Bet!</button>
-       <input type="text" id="betAmount"/>
-       <p>Bank value:<span id="bank">$50.00</span></p>
-    </div>
+      <button id="dealButton">Deal</button>
+      <button id="hitMeButton">Hit</button>
+      <button id="stayButton">Stand</button>
+      <button id="placeBetButton">Place Bet!</button>
+      <input type="text" id="betAmount"/>
+      <p>Bank value:<span id="bank">$50.00</span></p>
+      <div id="dealerHand"></div>
+      <div id="playerHand"></div>
+      <p id="playerScore">Your Hand: <span class="digits">0</span> Wins/Losses: <span id="wins">0</span>&nbsp;/&nbsp;<span id="losses">0</span></p>
     <footer>
-      <div class="author">Created by Sean Robbins</div></footer>
+      <div class="author">Created by Sean Robbins</div>
+    </footer>
   </body>
 </html>
